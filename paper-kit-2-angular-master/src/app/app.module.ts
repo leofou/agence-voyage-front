@@ -11,13 +11,16 @@ import { FooterComponent } from './shared/footer/footer.component';
 
 import { ComponentsModule } from './components/components.module';
 import { ExamplesModule } from './examples/examples.module';
+import { LocationService } from './service/location.service';
+import { CustomerService } from './service/customer.service';
+
 
 
 @NgModule({
   declarations: [
     AppComponent,
     NavbarComponent,
-    FooterComponent
+    FooterComponent,
   ],
   imports: [
     BrowserModule,
@@ -28,7 +31,10 @@ import { ExamplesModule } from './examples/examples.module';
     ExamplesModule,
     AppRoutingModule,
   ],
-  providers: [],
+  providers: [
+    LocationService,
+    CustomerService
+  ],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
