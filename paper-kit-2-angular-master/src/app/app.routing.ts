@@ -19,7 +19,7 @@ const routes: Routes =[
     { path: 'landing',          component: LandingComponent },
     { path: 'nucleoicons',      component: NucleoiconsComponent },
     { path: 'locations',         component: LocationComponent},
-    { path: 'customer',         component: CustomerComponent},
+    { path: 'customers',         component: CustomerComponent},
 ];
 
 @NgModule({
