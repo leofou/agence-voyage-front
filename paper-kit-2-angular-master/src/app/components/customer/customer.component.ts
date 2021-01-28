@@ -18,6 +18,19 @@ export class CustomerComponent implements OnInit {
   findAll() {
     this.customerService.findAll().subscribe(data => { this.customers = data });
   }
+  deleteCustomer(id: number) {
+    this.customerService.delete(id).subscribe(
+      () => { this.findAll() }
+    );
+  }
+  saveCustomer() {
+    this.customerService.save(this.customer).subscribe(
+      () => {
+        this.findAll();
+        this.customer = new Customer();
+      }
+    );
+  }
 
 
 }
