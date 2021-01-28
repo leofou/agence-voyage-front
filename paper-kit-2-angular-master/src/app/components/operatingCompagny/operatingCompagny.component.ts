@@ -1,4 +1,6 @@
 import { Component, OnInit } from '@angular/core';
+import {OperatingCompany} from 'app/model/OperatingCompany';
+import { OperatingcompanyService } from './../../service/Operatingcompany.service';
 
 @Component({
   selector: 'app-operatingCompagny',
@@ -7,9 +9,16 @@ import { Component, OnInit } from '@angular/core';
 })
 export class OperatingCompagnyComponent implements OnInit {
 
-  constructor() { }
+  operatingCompagnys: OperatingCompany[];
+  operatingCompagny: OperatingCompany= new OperatingCompany();
+  constructor(private customerService: OperatingcompanyService) { }
 
-  ngOnInit() {
+  ngOnInit(): void {
+    this.findAll();
   }
+  findAll() {
+    this.customerService.findAll().subscribe(data => { this.operatingCompagnys = data });
+  }
+
 
 }

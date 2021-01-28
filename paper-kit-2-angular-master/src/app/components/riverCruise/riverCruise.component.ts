@@ -1,3 +1,5 @@
+import { RiverCruiseService } from './../../service/riverCruise.service';
+import { RiverCruise } from './../../model/riverCruise';
 import { Component, OnInit } from '@angular/core';
 
 @Component({
@@ -7,9 +9,14 @@ import { Component, OnInit } from '@angular/core';
 })
 export class RiverCruiseComponent implements OnInit {
 
-  constructor() { }
+  riverCruises: RiverCruise[];
+  riverCruise: RiverCruise= new RiverCruise();
+  constructor(private customerService: RiverCruiseService) { }
 
-  ngOnInit() {
+  ngOnInit(): void {
+    this.findAll();
   }
-
+  findAll() {
+    this.customerService.findAll().subscribe(data => { this.riverCruises = data });
+  }
 }
