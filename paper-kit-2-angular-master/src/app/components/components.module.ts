@@ -15,6 +15,7 @@ import { NotificationComponent } from './notification/notification.component';
 import { NgbdModalComponent } from './modal/modal.component';
 import { NgbdModalContent } from './modal/modal.component';
 import { CustomerComponent } from './customer/customer.component';
+import { LocationComponent } from './location/location.component';
 
 @NgModule({
     imports: [
@@ -34,7 +35,8 @@ import { CustomerComponent } from './customer/customer.component';
         NotificationComponent,
         NgbdModalComponent,
         NgbdModalContent,
-        CustomerComponent
+        CustomerComponent,
+        LocationComponent,
     ],
     entryComponents: [NgbdModalContent],
     exports:[ ComponentsComponent ]
