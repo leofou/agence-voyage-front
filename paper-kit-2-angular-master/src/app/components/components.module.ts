@@ -1,3 +1,5 @@
+import { TrainRideComponent } from './trainRide/trainRide.component';
+import { OperatingCompagnyComponent } from './operatingCompagny/operatingCompagny.component';
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
@@ -16,6 +18,9 @@ import { NgbdModalComponent } from './modal/modal.component';
 import { NgbdModalContent } from './modal/modal.component';
 import { CustomerComponent } from './customer/customer.component';
 import { LocationComponent } from './location/location.component';
+import { JourneyComponent } from './journey/journey.component';
+import { RiverCruiseComponent } from './riverCruise/riverCruise.component';
+import { FlightComponent } from './flight/flight.component';
 
 @NgModule({
     imports: [
@@ -37,6 +42,11 @@ import { LocationComponent } from './location/location.component';
         NgbdModalContent,
         CustomerComponent,
         LocationComponent,
+        OperatingCompagnyComponent,
+        JourneyComponent,
+        RiverCruiseComponent,
+        TrainRideComponent,
+        FlightComponent,
     ],
     entryComponents: [NgbdModalContent],
     exports:[ ComponentsComponent ]
