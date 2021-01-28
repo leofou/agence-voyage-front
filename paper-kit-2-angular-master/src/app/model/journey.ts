@@ -1,4 +1,4 @@
-export abstract class Journey {
+export  class Journey {
     journeyId: number;
     originLocationCodeId: number;
     destinationLocationCodeId: number;
