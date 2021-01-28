@@ -20,4 +20,18 @@ export class LocationComponent implements OnInit {
     this.locationService.findAll().subscribe(data => { this.locations = data });
   }
 
+  deleteLocation(id: number) {
+    this.locationService.delete(id).subscribe(
+      () => { this.findAll() }
+    );
+  }
+  saveLocation() {
+    this.locationService.save(this.location).subscribe(
+      () => {
+        this.findAll();
+        this.location = new Location();
+      }
+    );
+  }
+
 }

@@ -11,14 +11,27 @@ export class OperatingCompagnyComponent implements OnInit {
 
   operatingCompagnys: OperatingCompany[];
   operatingCompagny: OperatingCompany= new OperatingCompany();
-  constructor(private customerService: OperatingcompanyService) { }
+  constructor(private operatingcompanyService: OperatingcompanyService) { }
 
   ngOnInit(): void {
     this.findAll();
   }
   findAll() {
-    this.customerService.findAll().subscribe(data => { this.operatingCompagnys = data });
+    this.operatingcompanyService.findAll().subscribe(data => { this.operatingCompagnys = data });
   }
 
+  deleteOperatingCompany(id: number) {
+    this.operatingcompanyService.delete(id).subscribe(
+      () => { this.findAll() }
+    );
+  }
+  saveOperatingCompany() {
+    this.operatingcompanyService.save(this.operatingCompagny).subscribe(
+      () => {
+        this.findAll();
+        this.operatingCompagny = new OperatingCompany();
+      }
+    );
+  }
 
 }

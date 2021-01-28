@@ -11,12 +11,26 @@ export class RiverCruiseComponent implements OnInit {
 
   riverCruises: RiverCruise[];
   riverCruise: RiverCruise= new RiverCruise();
-  constructor(private customerService: RiverCruiseService) { }
+  constructor(private riverCruiseService: RiverCruiseService) { }
 
   ngOnInit(): void {
     this.findAll();
   }
   findAll() {
-    this.customerService.findAll().subscribe(data => { this.riverCruises = data });
+    this.riverCruiseService.findAll().subscribe(data => { this.riverCruises = data });
+  }
+
+  deleteRiverCruise(id: number) {
+    this.riverCruiseService.delete(id).subscribe(
+      () => { this.findAll() }
+    );
+  }
+  saveRiverCruise() {
+    this.riverCruiseService.save(this.riverCruiseService).subscribe(
+      () => {
+        this.findAll();
+        this.riverCruise = new RiverCruise();
+      }
+    );
   }
 }

@@ -11,13 +11,27 @@ export class JourneyComponent implements OnInit {
 
   journeys: Journey[];
   journey: Journey= new Journey();
-  constructor(private customerService: JourneyService) { }
+  constructor(private journeyService: JourneyService) { }
 
   ngOnInit(): void {
     this.findAll();
   }
   findAll() {
-    this.customerService.findAll().subscribe(data => { this.journeys = data });
+    this.journeyService.findAll().subscribe(data => { this.journeys = data });
+  }
+
+  deleteJourney(id: number) {
+    this.journeyService.delete(id).subscribe(
+      () => { this.findAll() }
+    );
+  }
+  saveJourney() {
+    this.journeyService.save(this.journey).subscribe(
+      () => {
+        this.findAll();
+        this.journey = new Journey();
+      }
+    );
   }
 
 
