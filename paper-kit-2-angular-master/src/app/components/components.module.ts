@@ -40,13 +40,13 @@ import { FlightComponent } from './flight/flight.component';
         NotificationComponent,
         NgbdModalComponent,
         NgbdModalContent,
-        CustomerComponent,
+/*         CustomerComponent,
         LocationComponent,
         OperatingCompagnyComponent,
         JourneyComponent,
         RiverCruiseComponent,
         TrainRideComponent,
-        FlightComponent,
+        FlightComponent, */
     ],
     entryComponents: [NgbdModalContent],
     exports:[ ComponentsComponent ]

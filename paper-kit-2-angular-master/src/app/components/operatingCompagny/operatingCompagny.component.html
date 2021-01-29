@@ -1,3 +1,31 @@
-<p>
-  operatingCompagny works!
-</p>
+<div>
+  <h4>AJouter un operatingCompany</h4>
+  <form (ngSubmit)="saveOperatingCompany()">
+      <label>OperatingCompanyName</label>
+      <input type="text" [(ngModel)]="operatingCompanyService.operatingCompanyName" name="operatingCompanyName"/>
+      <label>OperatingCompanyDetails</label>
+      <input type="text" [(ngModel)]="operatingCompanyService.operatingCompanyDetails" name="operatingCompanyDetails"/>
+      <label>JourneyIds</label>
+      <input type="text" [(ngModel)]="operatingCompanyService.journeyIds" name="journeyIds"/>
+      <button>AJouter</button>
+  </form>
+</div>
+<div>
+   <table>
+       <tr>
+           <th>OperatingCompanyName</th>
+           <th>OperatingCompanyDetails</th>
+           <th>JourneyIds</th>
+           <th>Action</th>
+       </tr>
+
+       
+           <tr *ngFor="let o of operatingCompagnys">
+               <td>{{o.operatingCompanyName}}</td>
+               <td>{{o.operatingCompanyDetails}}</td>
+               <td>{{o.journeyIds}}</td>
+               <td><buton (click)="deleteOperatingCompany(o.idOperatingCompany)">Delete</buton></td>
+           </tr>
+       
+   </table>
+</div>
