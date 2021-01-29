@@ -30,6 +30,13 @@
                             <div class="row">
                                 <div class="col-md-6">
                                     <div class="form-group">
+                                        <label>Id</label>
+                                        <input type="number" class="form-control" placeholder="Customer Id"
+                                            [(ngModel)]="customer.customerId" name="customerId">
+                                    </div>
+                                </div>
+                                <div class="col-md-6">
+                                    <div class="form-group">
                                         <label>Nom</label>
                                         <input type="text" class="form-control" placeholder="Customer Name"
                                             [(ngModel)]="customer.customerName" name="customerName">
