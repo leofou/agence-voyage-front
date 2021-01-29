@@ -20,6 +20,11 @@ import { FlightComponent } from './components/flight/flight.component';
 import { OperatingcompanyService } from './service/Operatingcompany.service';
 import { HttpClientModule } from '@angular/common/http';
 import { ComponentsModule } from './components/components.module';
+import { LocationComponent } from './components/location/location.component';
+import { CustomerComponent } from './components/customer/customer.component';
+import { JourneyService } from './service/journey.service';
+import { RiverCruiseService } from './service/riverCruise.service';
+import { TrainRideService } from './service/trainRide.service';
 
 
 
@@ -28,6 +33,8 @@ import { ComponentsModule } from './components/components.module';
     AppComponent,
     NavbarComponent,
     FooterComponent,
+    LocationComponent,
+    CustomerComponent,
     OperatingCompagnyComponent,
     JourneyComponent,
     RiverCruiseComponent,
@@ -48,6 +55,9 @@ import { ComponentsModule } from './components/components.module';
     LocationService,
     CustomerService,
     OperatingcompanyService,
+    JourneyService,
+    RiverCruiseService,
+    TrainRideService,
 
   ],
   bootstrap: [AppComponent]
