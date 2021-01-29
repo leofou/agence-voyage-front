@@ -7,45 +7,108 @@
                     <img src="assets/img/customers.jpg" alt="">
                 </div> -->
                 <h1 class="presentation-title">Customers de l'agence</h1>
-                
+
             </div>
-  
+
             <h2 class="presentation-subtitle text-center">Merci pour votre argent</h2>
         </div>
     </div>
     <div class="moving-clouds" style="background-image: url('assets/img/clouds.png'); "></div>
-<!--     
-  </div>
-  <div>
-    <h4>Veuillez ajouter un nouveau lieu</h4>
-    <form (ngSubmit)="saveLocation()">
-        <label>Le code Location</label>
-        <input type="number" [(ngModel)]="locationService.codeLocation" name="codeLocation"/>
-        <label>Nom du lieu</label>
-        <input type="text" [(ngModel)]="locationService.locationName" name="locationName"/>
-        <label>Le type</label>
-        <input type="text" [(ngModel)]="locationService.type" name="type"/>
-        <button (click)="saveLocation(o.codeLocation)">AJOUTER</button>
-    </form>
-  </div>
-  <div class="content table-responsive table-full-width">
-     <table class="table table-hover table-stiped">
-       <thead>
-         <tr>
-             <th>Code de Location</th>
-             <th>Nom du lieu</th>
-             <th>Le type</th>
-             <th>Action</th>
-         </tr>
-        </thead>
-        <tbody>
-             <tr *ngFor="let c of Customer">
-                 <td>{{c.codeLocation}}</td>
-                 <td>{{o.locationName}}</td>
-                 <td>{{o.type}}</td>
-                 <td><buton class = "btn btn-xs btn-danger" (click)="deleteLocation(o.codeLocation)">SUPPRIMER</buton></td>
-             </tr>
-        </tbody>
-         
-     </table>
-  </div> -->
+</div>
+
+<div class="main-content">
+    <div class="container-fluid">
+        <div class="row">
+            <div class="col-md-8">
+                <div class="card">
+                    <div class="header">
+                        <h4 class="title">Ajouter un customer</h4>
+                    </div>
+                    <div class="content">
+                        <form (ngSubmit)="saveCustomer()">
+
+                            <div class="row">
+                                <div class="col-md-6">
+                                    <div class="form-group">
+                                        <label>Nom</label>
+                                        <input type="text" class="form-control" placeholder="Customer Name"
+                                            [(ngModel)]="customer.customerName" name="customerName">
+                                    </div>
+                                </div>
+                                <div class="col-md-6">
+                                    <div class="form-group">
+                                        <label>Email</label>
+                                        <input type="text" class="form-control" placeholder="Customer Email"
+                                            [(ngModel)]="customer.email" name="email">
+                                    </div>
+                                </div>
+                                <div class="col-md-6">
+                                    <div class="form-group">
+                                        <label>Phone Number</label>
+                                        <input type="number" class="form-control" placeholder="PhoneNumber"
+                                            [(ngModel)]="customer.phoneNumber" name="phoneNumber">
+                                    </div>
+                                </div>
+                                <div class="col-md-6">
+                                    <div class="form-group">
+                                        <label>Date Become Customer </label>
+                                        <input type="date" class="form-control" placeholder="Date"
+                                            [(ngModel)]="customer.dateBecomeCustomer" name="dateBecomeCustomer">
+                                    </div>
+                                </div>
+                            </div>
+                            <!-- <div class="row">
+                                    <div class="col-md-6">
+                                        <div class="form-group">
+                                            <label>List de Journey Ids</label>
+                                            <input type="numer[]" class="form-control" placeholder="Journey Ids"
+                                                [(ngModel)]="customer.journeyIds" name="journeyIds">
+                                        </div>
+                                    </div>
+                                   
+                                </div> -->
+
+
+                            <button class="btn btn-info btn-fill pull-right">Ajouter</button>
+                            <div class="clearfix"></div>
+                        </form>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-12">
+                <div class="card">
+                    <div class="header">
+                        <h4 class="title">Liste des customers</h4>
+                    </div>
+                    <div class="content table-responsive table-full-width">
+                        <table class="table table-hover table-striped">
+                            <thead>
+                                <tr>
+                                    <!--- <th *ngFor="let cell of tableData1.headerRow">{{ cell }}</th>-->
+                                    <th>customerId</th>
+                                    <th>customerName</th>
+                                    <th>dateBecomeCustomer</th>
+                                    <th>email</th>
+                                    <th>phoneNumber</th>
+                                    <th>Action</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr *ngFor="let c of customers">
+                                    <td>{{c.customerId}}</td>
+                                    <td>{{c.customerName}}</td>
+                                    <td>{{c.dateBecomeCustomer}}</td>
+                                    <td>{{c.email}}</td>
+                                    <td>{{c.phoneNumber}}</td>
+                                    <td><button (click)="deleteCustomer(c.customerId)">Delete</button>
+                                    </td>
+                                </tr>
+                            </tbody>
+                        </table>
+
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
