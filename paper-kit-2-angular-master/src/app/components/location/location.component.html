@@ -13,50 +13,62 @@
           <h2 class="presentation-subtitle text-center">Alors quelles sont vos envies ?</h2>
       </div>
   </div>
-  <div class="moving-clouds" style="background-image: url('assets/img/clouds.png'); "></div>
-  
+  <div class="moving-clouds" style="background-image: url('assets/img/clouds.png'); "></div>  
 </div>
-<div>
-  <h4>Veuillez ajouter un nouveau lieu</h4>
-  <form (ngSubmit)="saveLocation()">
-      <div class="row">
-          <div class="col-md-5">
-                 <div class="form-group">
-                     <label>Nom du lieu</label>
-                     <input type="text" [(ngModel)]="locationService.locationName" name="locationName"/>
-                </div>
-          </div>
-    </div>
-    <div class="row">
-        <div class="col-md-12">
-               <div class="form-group">
-                     <label>Le type</label>
-                     <input type="text" [(ngModel)]="locationService.type" name="type"/>
-                 </div>
-            </div>
-    </div>
-      <button class="btn btn-info btn-fill pull right" (click)="saveLocation()">AJOUTER</button>
-      <div cclass="clearfix"></div>
-  </form>
-</div>
-<div class="content table-responsive table-full-width">
-   <table class="table table-hover table-stiped">
-     <thead>
-       <tr>
-           <th>Code de Location</th>
-           <th>Nom du lieu</th>
-           <th>Le type</th>
-           <th>Action</th>
-       </tr>
-      </thead>
-      <tbody>
-           <tr *ngFor="let o of Location">
-               <td>{{o.codeLocation}}</td>
-               <td>{{o.locationName}}</td>
-               <td>{{o.type}}</td>
-               <td><button class = "btn btn-xs btn-danger" (click)="deleteLocation(o.codeLocation)">SUPPRIMER</button></td>
-           </tr>
-      </tbody>
+
+
+
+<div class="main-content">
+    <div class="container-fluid">
+        <div class="row">
+            <div class="col-md-12">
+                <div class="card">
+                    <div class="header">
+                     <h4>Veuillez ajouter un nouveau lieu</h4>
+                    </div>
+                        <form (ngSubmit)="saveLocation()">
+                            <div class="row">
+                                 <div class="col-md-5">
+                                     <div class="form-group">
+                                         <label>Nom du lieu</label>
+                                         <input type="text" [(ngModel)]="locationService.locationName" name="locationName"/>
+                                     </div>
+                                 </div>
+                            </div>
+                            <div class="row">
+                                 <div class="col-md-12">
+                                     <div class="form-group">
+                                         <label>Le type</label>
+                                         <input type="text" [(ngModel)]="locationService.type" name="type"/>
+                                     </div>
+                                 </div>
+                            </div>
+                            <button class="btn btn-info btn-fill pull right" (click)="saveLocation()">AJOUTER</button>
+                             <div cclass="clearfix"></div>
+                        </form>
+              </div>
+                    <div class="content table-responsive table-full-width">
+                        <table class="table table-hover table-stiped">
+                            <thead>
+                            <tr>
+                                <th>Code de Location</th>
+                                <th>Nom du lieu</th>
+                                <th>Le type</th>
+                                <th>Action</th>
+                            </tr>
+                            </thead>
+                            <tbody>
+                                <tr *ngFor="let o of Location">
+                                    <td>{{o.codeLocation}}</td>
+                                    <td>{{o.locationName}}</td>
+                                    <td>{{o.type}}</td>
+                                    <td><button class = "btn btn-xs btn-danger" (click)="deleteLocation(o.codeLocation)">SUPPRIMER</button></td>
+                                </tr>
+                            </tbody>
        
-   </table>
+                        </table>
+                    </div>
+            </div>
+     </div>
+
 </div>
