@@ -31,7 +31,7 @@
                                  <div class="col-md-5">
                                      <div class="form-group">
                                          <label>Nom du lieu</label>
-                                         <input type="text" [(ngModel)]="locationService.locationName" name="locationName"/>
+                                         <input type="text" [(ngModel)]="location.locationName" name="locationName"/>
                                      </div>
                                  </div>
                             </div>
@@ -39,7 +39,7 @@
                                  <div class="col-md-12">
                                      <div class="form-group">
                                          <label>Le type</label>
-                                         <input type="text" [(ngModel)]="locationService.type" name="type"/>
+                                         <input type="text" [(ngModel)]="location.type" name="type"/>
                                      </div>
                                  </div>
                             </div>
@@ -58,7 +58,7 @@
                             </tr>
                             </thead>
                             <tbody>
-                                <tr *ngFor="let o of Location">
+                                <tr *ngFor="let o of locations">
                                     <td>{{o.codeLocation}}</td>
                                     <td>{{o.locationName}}</td>
                                     <td>{{o.type}}</td>

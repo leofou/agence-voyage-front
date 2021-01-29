@@ -28,8 +28,9 @@ export class LocationComponent implements OnInit {
   saveLocation() {
     this.locationService.save(this.location).subscribe(
       () => {
-        this.findAll();
         this.location = new Location();
+        this.findAll();
+        
       }
     );
   }
