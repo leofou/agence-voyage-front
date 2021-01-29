@@ -1,3 +1,63 @@
-<p>
-  riverCruise works!
-</p>
+<div class="page-header section-dark" style="background-image: url('assets/img/croisiere.jpg')">
+  <div class="filter"></div>
+  <div class="content-center">
+      <div class="container">
+          <div class="title-brand">
+              <div class="angular-logo">
+                  <img src="assets/img/angular2-logo.png" alt="">
+              </div>
+              <h1 class="presentation-title">GESTION DES CROISIÈRES</h1>
+          </div>
+          <h2 class="presentation-subtitle text-center">Alors quelles sont vos envies ?</h2>
+      </div>
+  </div>
+  <div class="moving-clouds" style="background-image: url('assets/img/clouds.png'); "></div>
+</div>
+<div>
+  <h4>Veuillez ajouter une nouvelle croisière</h4>
+  <form (ngSubmit)="saveRiverCruise()">
+      <label>Code location du départ</label>
+      <input type="number" [(ngModel)]="flightService.originLocationCodeId" name="originLocationCodeId"/>
+      <label>Code location de la destination</label>
+      <input type="number" [(ngModel)]="flightService.destinationLocationCodeId" name="destinationLocationCodeId"/>
+      <label>Id de la compagnie de transport</label>
+      <input type="number" [(ngModel)]="flightService.operatingCompanyId" name="operatingCompanyId"/>
+      <label>Date de départ</label>
+      <input type="date" [(ngModel)]="flightService.startDate" name="startDate"/>
+      <label>Date d'arrivée</label>
+      <input type="date" [(ngModel)]="flightService.endDate" name="endDate"/>
+      <label>Le nom du bateau</label>
+      <input type="number" [(ngModel)]="flightService.nameOfTheBoat" name="nameOfTheBoat"/>
+      <label>Lieu d'enregistrement du bateau</label>
+      <input type="number" [(ngModel)]="flightService.portOfRegistration" name="portOfRegistration"/>
+      <button class="btn btn-info btn-fill pull right" (click)="saveFlight()">AJOUTER</button>
+  </form>
+</div>
+<div class="content table-responsive table-full-width">
+   <table class="table table-hover table-stiped">
+     <thead>
+       <tr>
+           <th>Code de location du départ</th>
+           <th>Code location de la destination</th>
+           <th>ID de la compagnie de transport</th>
+           <th>Date de départ</th>
+           <th>Date d'arrivée</th>
+           <th>Le numéro du bateau</th>
+           <th>Lieu d'enregistrement</th>
+           <th>Action</th>
+       </tr>
+      </thead>
+      <tbody>
+           <tr *ngFor="let o of Flight">
+               <td>{{o.originLocationCodeId}}</td>
+               <td>{{o.destinationLocationCodeId}}</td>
+               <td>{{o.operatingCompanyId}}</td>
+               <td>{{o.startDate}}</td>
+               <td>{{o.endDate}}</td>
+               <td>{{o.nameOfTheBoat}}</td>
+               <td>{{o.portOfRegistration}}</td>
+               <td><buton class = "btn btn-xs btn-danger" (click)="deleteFlight(o.journeyId)">SUPPRIMER</buton></td>
+           </tr>
+      </tbody>
+   </table>
+</div>
