@@ -20,8 +20,8 @@ export class OperatingCompagnyComponent implements OnInit {
     this.operatingcompanyService.findAll().subscribe(data => { this.operatingCompagnys = data });
   }
 
-  deleteOperatingCompany(id: number) {
-    this.operatingcompanyService.delete(id).subscribe(
+  deleteOperatingCompany(idOperatingCompany: number) {
+    this.operatingcompanyService.delete(idOperatingCompany).subscribe(
       () => { this.findAll() }
     );
   }

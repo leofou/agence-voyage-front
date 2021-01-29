@@ -1,31 +1,78 @@
-<div>
-  <h4>AJouter un operatingCompany</h4>
-  <form (ngSubmit)="saveOperatingCompany()">
-      <label>OperatingCompanyName</label>
-      <input type="text" [(ngModel)]="operatingCompanyService.operatingCompanyName" name="operatingCompanyName"/>
-      <label>OperatingCompanyDetails</label>
-      <input type="text" [(ngModel)]="operatingCompanyService.operatingCompanyDetails" name="operatingCompanyDetails"/>
-      <label>JourneyIds</label>
-      <input type="text" [(ngModel)]="operatingCompanyService.journeyIds" name="journeyIds"/>
-      <button>AJouter</button>
-  </form>
-</div>
-<div>
-   <table>
-       <tr>
-           <th>OperatingCompanyName</th>
-           <th>OperatingCompanyDetails</th>
-           <th>JourneyIds</th>
-           <th>Action</th>
-       </tr>
+<div class="main-content">
+    <div class="container-fluid">
+        <div class="row">
+            <div class="col-md-8">
+                <div class="card">
+                    <div class="header">
+                        <h4 class="title">Ajouter a operating company</h4>
+                    </div>
+                    <div class="content">
+                        <form (ngSubmit)="saveOperatingCompany()">
 
-       
-           <tr *ngFor="let o of operatingCompagnys">
-               <td>{{o.operatingCompanyName}}</td>
-               <td>{{o.operatingCompanyDetails}}</td>
-               <td>{{o.journeyIds}}</td>
-               <td><buton (click)="deleteOperatingCompany(o.idOperatingCompany)">Delete</buton></td>
-           </tr>
-       
-   </table>
+                            <div class="row">
+                                <div class="col-md-6">
+                                    <div class="form-group">
+                                        <label>Nom</label>
+                                        <input type="text" class="form-control" placeholder="Operating Company Name"
+                                            [(ngModel)]="operatingCompagny.operatingCompanyName" name="operatingCompanyName">
+                                    </div>
+                                </div>
+                                <div class="col-md-6">
+                                    <div class="form-group">
+                                        <label>Details</label>
+                                        <input type="text" class="form-control" placeholder="Operating Company Details"
+                                            [(ngModel)]="operatingCompagny.operatingCompanyDetails" name="operatingCompanyDetails">
+                                    </div>
+                                </div>
+                            </div>
+                            <!-- <div class="row">
+                                <div class="col-md-6">
+                                    <div class="form-group">
+                                        <label>List de Journey Ids</label>
+                                        <input type="text" class="form-control" placeholder="Journey Ids"
+                                            [(ngModel)]="operatingCompagny.journeyIds" name="journeyIds">
+                                    </div>
+                                </div>
+                               
+                            </div> -->
+
+
+                            <button class="btn btn-info btn-fill pull-right">Ajouter</button>
+                            <div class="clearfix"></div>
+                        </form>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-12">
+                <div class="card">
+                    <div class="header">
+                        <h4 class="title">Les operating companies</h4>
+                    </div>
+                    <div class="content table-responsive table-full-width">
+                        <table class="table table-hover table-striped">
+                            <thead>
+                                <tr>
+                                    <!--- <th *ngFor="let cell of tableData1.headerRow">{{ cell }}</th>-->
+                                    <th>Nom</th>
+                                    <th>Detail</th>
+                                    <th>JourneyIds</th>
+                    
+                                    <th>Action</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr *ngFor="let o of operatingCompagnys">
+                                    <td>{{o.operatingCompanyName}}</td>
+                                    <td>{{o.operatingCompanyDetails}}</td>
+                                    <td>{{o.journeyIds}}</td>
+                                    <td><button (click)="deleteOperatingCompany(o.idOperatingCompany)">Delete</button></td>
+                                </tr>
+                            </tbody>
+                        </table>
+
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
 </div>
