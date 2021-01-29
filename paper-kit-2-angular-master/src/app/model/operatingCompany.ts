@@ -1,5 +1,5 @@
 export class OperatingCompany {
-    idOperatingCompany: number;
+    idOperatingComany: number;
     operatingCompanyName: String;
     operatingCompanyDetails: String;
     journeyIds : number[];

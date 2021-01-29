@@ -20,11 +20,13 @@ export class OperatingCompagnyComponent implements OnInit {
     this.operatingcompanyService.findAll().subscribe(data => { this.operatingCompagnys = data });
   }
 
-  deleteOperatingCompany(idOperatingCompany: number) {
-    this.operatingcompanyService.delete(idOperatingCompany).subscribe(
+  deleteOperatingCompany(id: number) {
+
+    this.operatingcompanyService.delete(id).subscribe(
       () => { this.findAll() }
     );
   }
+
   saveOperatingCompany() {
     this.operatingcompanyService.save(this.operatingCompagny).subscribe(
       () => {
