@@ -4,7 +4,7 @@
       <div class="container">
           <div class="title-brand">
               <div class="angular-logo">
-                  <img src="assets/img/angular2-logo.png" alt="">
+                  <img src="assets/img/lion2.gif" alt="">
               </div>
               <h1 class="presentation-title">GESTIONS DES LIEUX</h1>
               
@@ -19,13 +19,24 @@
 <div>
   <h4>Veuillez ajouter un nouveau lieu</h4>
   <form (ngSubmit)="saveLocation()">
-      <label>Le code Location</label>
-      <input type="number" [(ngModel)]="locationService.codeLocation" name="codeLocation"/>
-      <label>Nom du lieu</label>
-      <input type="text" [(ngModel)]="locationService.locationName" name="locationName"/>
-      <label>Le type</label>
-      <input type="text" [(ngModel)]="locationService.type" name="type"/>
-      <button (click)="saveLocation(o.codeLocation)">AJOUTER</button>
+      <div class="row">
+          <div class="col-md-5">
+                 <div class="form-group">
+                     <label>Nom du lieu</label>
+                     <input type="text" [(ngModel)]="locationService.locationName" name="locationName"/>
+                </div>
+          </div>
+    </div>
+    <div class="row">
+        <div class="col-md-12">
+               <div class="form-group">
+                     <label>Le type</label>
+                     <input type="text" [(ngModel)]="locationService.type" name="type"/>
+                 </div>
+            </div>
+    </div>
+      <button class="btn btn-info btn-fill pull right" (click)="saveLocation()">AJOUTER</button>
+      <div cclass="clearfix"></div>
   </form>
 </div>
 <div class="content table-responsive table-full-width">
