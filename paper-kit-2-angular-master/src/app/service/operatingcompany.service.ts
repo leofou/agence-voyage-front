@@ -5,7 +5,7 @@ import { HttpClient } from '@angular/common/http';
 @Injectable({
   providedIn: 'root'
 })
-export class OperatingcompanyService { private baseURL = "http://localhost:9099/operatingCompanies";
+export class OperatingcompanyService { private baseURL = "http://localhost:9090/operatingCompanies";
 
 constructor(private httpClient: HttpClient) { }
 
